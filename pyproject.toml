@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pastpaper-anki-miner"
+version = "0.2.0"
+description = "Convert past-paper text or PDFs into structured flashcard candidates for spaced repetition."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+pdf = [
+  "pypdf==4.2.0",
+]
+
+[project.scripts]
+pastpaper-anki-miner = "pastpaper_anki_miner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
